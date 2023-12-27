@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapa Payment</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+    <form method="POST" action="https://api.chapa.co/v1/hosted/pay" onsubmit="setTxRef()">
+        <input type="hidden" name="public_key" value="CHAPUBK_TEST-87uG41yGm8nafxnLfXB3kryr7C1IRNgn"/>
+        
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="first_name" required>
+
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="last_name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="amount">Amount:</label>
+        <input type="amount" id="amount" name="amount" required>
+
+        <input type="hidden" name="currency" value="ETB" />
+        <input type="hidden" name="title" value="Let us do this" />
+        <input type="hidden" name="description" value="Paying with Confidence with cha" />
+        <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
+        <input type="hidden" name="callback_url" value="https://example.com/callbackurl" />
+        <input type="hidden" name="return_url" value="https://example.com/returnurl" />
+        <input type="hidden" name="meta[title]" value="test" />
+        <input type="hidden" name="tx_ref" value="" id="txRefHidden">
+
+        <input type="submit" value="Submit">
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>
